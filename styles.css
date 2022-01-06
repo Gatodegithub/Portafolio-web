@@ -1,0 +1,384 @@
+:root {
+  --hover: #bff7dc;
+  --decoration: #451a5895;
+}
+
+[id] {
+  scroll-margin-top: 2ex;
+}
+
+/* Utilidades */
+.z-index-10 {
+  z-index: 10;
+}
+.z-index-20 {
+  z-index: 20;
+}
+
+.navEffect {
+  background-color: #16011f;
+  transition: 1.5s;
+}
+
+/* ITEMS CON HOVER */
+.list-group-item {
+  border-radius: 10px !important;
+}
+
+.list-links li:first-child {
+  margin-right: 5px;
+}
+
+.list-links li:last-child {
+  margin-left: 5px;
+}
+
+.list-group-item:hover {
+  cursor: pointer;
+  background-color: var(--hover);
+}
+
+/* Diseño titulos iguales */
+.about h2::before,
+.resume h2::before,
+.portfolio h2::before,
+.contact h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.about h2::after,
+.resume h2::after,
+.portfolio h2::after,
+.contact h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--decoration);
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.resume-title {
+  color: var(--decoration);
+}
+
+.expprof {
+  margin-top: 20px;
+}
+
+.filaExp ul{
+  list-style: none;
+}
+
+.filaExp ul li:before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color:  #9a81a2;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+@media screen and (min-width: 991px) {
+  .expprof {
+    margin-top: 0px;
+  }
+}
+
+/* Side Navbar */
+.side-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 100px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.side-navbar .logo,
+.side-navbar nav ul li a {
+  /* Doy altura al li tmb */
+  line-height: 55px;
+}
+.side-navbar .logo {
+  color: #fff;
+  font-size: 24px;
+  float: left;
+  font-weight: bold;
+}
+.side-navbar nav {
+  float: right;
+}
+.side-navbar nav ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.side-navbar nav ul li {
+  list-style: none;
+}
+
+.side-navbar nav ul li a {
+  padding: 0 40px;
+  color: white;
+  text-decoration: none;
+  display: block; /* El a cubra todo el espacio del li */
+}
+.side-navbar nav ul li a:hover,
+.side-navbar nav ul li a.active {
+  /*El que tenga la clase active*/
+  color: #fff;
+  background-color: #0101;
+}
+.menu-toggle {
+  color: #fff;
+  float: right;
+  line-height: 40px;
+  margin-top: 2px;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+@media screen and (max-width: 1040px) {
+  .side-navbar {
+    padding: 0 20px;
+  }
+  .menu-toggle {
+    display: block;
+    /* line-height: 65px; */
+  }
+  .side-navbar nav {
+    position: absolute;
+    width: 50%;
+    background-color: #16011f;
+    top: 55px;
+    left: -100%;
+    /* transition: 0.5s; */
+  }
+  /* Cuando el nav tenga la clase active */
+  .side-navbar nav.active {
+    left: 0;
+    height: 100vh;
+  }
+  .side-navbar nav ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+  }
+
+  .side-navbar nav ul li a {
+    line-height: 100px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* SECCION HOME */
+.background-fall {
+  background-image: linear-gradient(
+    to right bottom,
+    #e0d1e5,
+    #bda8c3,
+    #9a81a2,
+    #795c83,
+    #593864,
+    #4a2854,
+    #3b1844,
+    #2c0835,
+    #290730,
+    #26062b,
+    #230426,
+    #200221
+  );
+}
+
+@media screen and (max-width: 768px) {
+  .background-fall {
+    height: 90vh !important;
+  }
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  height: 80%;
+  justify-content: center;
+}
+
+.header-info .header-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+}
+
+.main .wave {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+}
+
+.main .shape {
+  position: absolute;
+  right: 0px;
+  width: 350px;
+  bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .main .wave {
+    bottom: -55px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .main .wave {
+    bottom: -95px;
+  }
+}
+
+.main a i {
+  color: black;
+}
+
+/* SECCION ABOUT */
+@media screen and (min-width: 768px) {
+  .mifoto {
+    padding-top: 2rem;
+  }
+  .sobremi {
+    padding-top: 3rem;
+  }
+}
+
+
+.blockquote-footer::before {
+  content: "";
+}
+
+.listas-datos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.listas-datos ul li {
+  padding-bottom: 10px;
+}
+
+.listas-datos ul i {
+  /* color: var(--decoration); */
+  color: #451a5895;
+}
+
+/* SKILLS */
+.progress-bar {
+  background-color: #451a5895;
+}
+
+/* RESUME */
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -10px;
+  top: 0px;
+  background: #fff;
+  border: 2px solid #451a5895;
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #451a5895;
+}
+
+@media screen and (min-width: 992px) {
+  .resume .resume-item {
+    height: 100%;
+  }
+}
+
+/* PORTAFOLIO */
+.portfolio {
+  position: relative;
+  height: 600px;
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("./canvas.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 1400px) {
+  .portfolio {
+    background-size: contain;
+  }
+}
+
+.blob-container {
+  margin-top: -60px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  background: url("./blob.svg") no-repeat center;
+  background-size: cover;
+  height: 600px;
+  filter: drop-shadow(20px 15px 2px #593864);
+}
+
+.blob-container ul {
+  list-style: none;
+}
+
+.blob-container ul li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.blob-container ul a {
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 578px) {
+  .blob-container {
+    background-size: auto;
+  }
+}
+
+/* CONTACTO */
+/* emailjs */
+/* .contact {
+  margin-top: 3rem;
+} */
+
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #4460aa;
+  color: #fff;
+  border: none;
+}
+
+/* FOOTER */
+.footer ul li a {
+  color: black;
+}
